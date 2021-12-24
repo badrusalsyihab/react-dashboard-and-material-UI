@@ -2,6 +2,50 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Building Dashboards Quickly with React and Material-UI
+
+ ## Please install dependency
+ - npm install @material-ui/core
+ - npm install @material-ui/icons
+ - npm install recharts@2.0.0-beta.6
+ - npm install fontsource-roboto
+
+## Import font 
+import 'fontsource-roboto'; in src/index.js
+
+## clone thema dashboard from github
+Now that we have all the modules installed, we’ll need to pull in our example dashboard components. Head over to the Material-UI GitHub and clone this repository into a separate folder (outside of the new dashboard directory):
+git clone https://github.com/mui-org/material-ui.git
+
+## copy the component .js
+Now we’ll copy the component .js files into our dashboard app directory (we won’t need the TypeScript .tsx files for now):
+cp -r material-ui/docs/src/pages/getting-started/templates/dashboard/*.js dashboard/src/
+
+## import Dashboard
+Finally, let’s edit our app to use the new components. Head back into the dashboard app directory and open up src/App.js. Near the top of the file, after the last import statement add another import to pull in the new Dashboard component:
+import Dashboard from './Dashboard';
+
+## Next, remove everything inside of <div className="App"> and replace it with the following:
+<Dashboard />
+import './App.css';
+import Dashboard from './Dashboard';
+function App() {
+  return (
+    <div className="App">
+      <Dashboard />
+    </div>
+  );
+}
+export default App;
+  
+## Last, we need to make one small style tweak so that everything looks correct. Edit the src/Dashboard.js file and change the following line:
+theme.palette.mode === 'light'
+to
+theme.palette.type === 'light'
+  
+## Great! We should now have all the pieces in place to run our new dashboard app. Go ahead and save the changes and boot up the app:
+npm start
+  
 ## Available Scripts
 
 In the project directory, you can run:
