@@ -10,6 +10,8 @@ import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
+import { Link } from "react-router-dom";
+
 export const mainListItems = (
   <div>
     <ListItem button>
@@ -18,11 +20,11 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItem>
-    <ListItem button>
+    <ListItem button component="a" href="/">
       <ListItemIcon>
         <ShoppingCartIcon />
       </ListItemIcon>
-      <ListItemText primary="Orders" />
+      <ListItemText primary="Orders" /> 
     </ListItem>
     <ListItem button>
       <ListItemIcon>
